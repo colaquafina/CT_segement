@@ -9,3 +9,5 @@
 it use unet to segement the CT pictures 
 
 I would introduce it more specifically after the final exam.
+
+最后的比赛连三等奖都没拿到，简直丢脸到家了，但随缘了，我不会伤心的
