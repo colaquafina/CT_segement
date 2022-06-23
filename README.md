@@ -16,6 +16,12 @@ I would introduce it more specifically after the final exam.
 
 这个比赛提供给我们的数据是CT图像以及医生标注的结果，根据这些数据训练得到网络后把测试集的CT图像标注出来，并打包成nii.gz的格式
 
-给的数据很怪，不同病人拍的张数不同，有些病人甚至连图片的size也有不同，所以一开始要先处理数据，利用databse把他整成适合训练的数据，代码是
+给的数据很怪，不同病人拍的张数不同，有些病人甚至连图片的size也有不同，所以一开始要先处理数据，利用databse把他整成适合训练的数据，代码在data/dataset.py哪里，data文件夹下的三个txt文件是每导入一个训练集就会把训练集的名字加到txt里面，这样子不仅方便打乱数据，也可以节省空间，不需要保存npy文件，而是保存名字
 
-然后就是写unet的代码，这里用的loss function是dice loss。关于这个dice loss，我们一开始写错了，导致训练结果很差，在ddl前一晚上才发现，所以没拿到奖也没啥办法
+然后就是写unet的代码，在model/unet.py。
+
+训练过程的代码写在train.py里，loss用的是dice loss。我们一开始loss写错了所以训练效果很差，直到ddl前一天才发现，所以没拿到奖。训练时候的参数卸载configure.py里。
+
+predict.py和testing.py均是用于测试模型的训练效果，其中predict.py还有打包测试结果成nii.gz的功能
+
+最后的模型训练效果还不错，我们的训练值进行到了第70个epoches（也就是一半），大部分数据的测试结果都有正确率90以上。
