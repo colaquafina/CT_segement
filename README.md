@@ -6,7 +6,7 @@
 
 详细的介绍假期会补上
 
-it use unet to segement the CT pictures 
+it uses unet to segement the CT pictures 
 
 I would introduce it more specifically after the final exam.
 
